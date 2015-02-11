@@ -1,0 +1,53 @@
+#!/bin/sh
+# z3bra + dkeg. I took it, removed some lines and then mutilated it.
+# Then repaired it with dkeg and z3bras configs again. So it is still mostly theirs.
+
+temp() {
+    awk '{print $1/1000}' /sys/class/thermal/thermal_zone0/temp 
+}
+mem() {
+    free -m | awk 'NR==3 {print $3}' 
+}
+clock() {
+    date +'%e %b %R'
+}
+batt() {
+    cat /sys/class/power_supply/BAT0/capacity 2>/dev/null
+}
+music() {
+    cmusbar 2>/dev/null
+}
+vol() {
+    amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/' | sed -e 's/%//g'
+}
+tags() {
+    herbstclient list_monitors | awk '{gsub(/"/," ");print $5}'
+    #herbstclient tag_status
+}
+pingd() {
+    $HOME/bin/pingd
+}
+
+# Fill buffer, output it to stdout.
+while :; do
+    buf="%{l} %{B#FF25262b} "
+    buf="${buf} %{F#FF1d7192} batt "
+    buf="${buf} %{F#FFbadbcb} $(batt) "
+    buf="${buf} %{F#FF1d7192} mem "
+    buf="${buf} %{F#FFbadbcb} $(mem) "
+    buf="${buf} %{F#FF1d7192} vol "
+    buf="${buf} %{F#FFbadbcb} $(vol) %{c}"
+#    buf="${buf} %{F#FF120f20} $(music) %{r}"
+#    buf="${buf} %{F#FFa69c8e} $(pingd) "
+    buf="${buf} %{F#FFFFFFFF} $() "
+    buf="${buf} %{F#FFFFFFFF} $() "   
+    buf="${buf} %{F#FFFFFFFF} $() "   
+    buf="${buf} %{F#FFFFFFFF} $() "   
+    buf="${buf} %{F#FFbadbcb} $(clock) "
+    buf="${buf} %{F#FFFFFFFF} $() "
+    buf="${buf} %{F#FFFFFFFF} $() "
+    buf="${buf} %{F#FFFFFFFF} $() "
+
+    echo $buf
+    sleep 1 
+done
