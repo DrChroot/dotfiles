@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<!--
+
+    Author:        Twily                               2014
+    Website:       http://twily.info/
+    Compatibility: Mozilla Firefox, Google Chrome
+
+    Search Useage: "artist!i" will find images for "artist"
+
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>New Tab</title>
+
+<style type="text/css">
+html,body {
+    margin: 0; padding: 0; overflow: hidden;
+    width: 100%; height: 100%;
+    font-family: "Droid Sans", "Liberation Sans", "DejaVu Sans", "Segoe UI", Sans; font-size: 10pt;
+    background: #17181A;
+}
+ul, li { list-style-type: none; margin: 0; padding: 0; }
+
+a, a:link, a:visited { color: #aaabad; text-decoration: none; }
+a:hover, a:active    { color: #cecfd1; }
+
+.center { position: relative; width: 100%; height: 100%; }
+    .center .content {
+        margin: auto; overflow: auto; width: 600px; height: 300px;
+        position: absolute; left: 0; top: 0; right: 0; bottom: -50px; /* search box align */
+        text-align: center; opacity: 1; transition: .3s ease-out;
+    }
+
+#q {
+    width: 500px;
+    background: #27282B; color: #cecfd1;
+    border: 0px solid #27282B; border-radius: 0px;
+    padding: 8px 8px; font-size: 12pt;
+}
+    #q:focus { border-color: #66686A !important; }
+    #q:hover { border-color: #393A3D; }
+
+#more {
+    background: #27282B; color: #aaabad; border-radius: 0px;
+    cursor: pointer; display: inline-block;
+    font-size: 18pt; line-height: 26px; /* vertical align "+" button */
+    width: 24px; height: 24px;
+    text-align: center; font-weight: bold;
+}
+    #help {
+        display: inline-block; width: 320px; cursor: default;
+        font-family: "PragmataPro", "Droid Sans Mono", "Liberation Sans Mono", "DejaVu Sans Mono", "Consolas", "Lucida Console", monospace;
+        background: #27282B; color: #aaabad;
+        padding: 8px; text-align: left; border-radius: 0px;
+        opacity: 0; transition: .2s ease-out;
+    }
+
+#menu {
+    position: fixed; bottom: -64px; left: 0; z-index: 11;
+    width: 100%; height: 128px;
+    background: transparent; color: #aaabad; cursor: default;
+    transition: .2s ease-out;
+}
+    #menu:hover            { bottom: 0; }
+    #mnu                   { height: 64px; line-height: 32px; }
+
+    #grip                  { width: 100%; height: 64px; background: transparent; }
+
+    #menu ul               { display: inline-table; position: relative; list-style: none; }
+    #menu label            { padding: 0; display: inline-block; font-weight: bold; width: 200px; } /* menu title width */
+
+    #menu ul li            { float: left; border-radius: 0px; height: 64px; }
+    #menu ul li:hover      { background: #27282B; color: #cecfd1; }
+    #menu ul li:hover > ul { visibility: visible; bottom: 100%; opacity: 1; transition: .2s ease-out; }
+    #menu ul li a          { display: block; white-space: nowrap; padding: 0 10px; }
+
+    #menu ul ul            {
+        display: block; visibility: hidden; width: 200px;
+        position: absolute; bottom: 200%;
+        background: transparent; opacity: 0;
+        transition: .3s ease-out;
+    }
+
+    #menu ul ul li         { width: 100%; height: 32px; text-align: left; } /* menu links align */
+    #menu ul ul li:hover   { background: #27282B; }
+
+    #menu img {
+        width: 16px; height: 16px;
+        position: relative; top: 3px;
+        padding-right: 3px; visibility: hidden;
+    }
+</style>
+
+<script type="text/javascript" language="javascript">
+var $=function(id) { return document.getElementById(id); };
+
+
+var search=[ // Search engines
+["",    "https://www.google.com/#q="],                           // Google (Default)
+["!g",  "https://www.google.com/#q="],                           // Google
+["!i",  "https://www.google.com/search?tbm=isch&q="],            // Google Images
+["!y",  "https://www.youtube.com/results?search_query="],       // YouTube
+["!w",  "http://en.wikipedia.org/w/index.php?search="],         // Wikipedia
+["!m",  "http://www.imdb.com/find?q="],                         // IMDb
+    ["!u",  "http://www.urbandictionary.com/define.php?term="],     // Urban Dictionary
+];
+
+var menus=[ // Menu Titles ["Title", width(px)],                                                   /* menu width */
+    ["News",           200],                                        // menu-1
+    ["Linux", 200],                                        // menu-2
+    ["Entertainment",  200],                                        // menu-3
+    ["Other",          200],                                        // menu-4
+];
+
+var showFavicon = true;                                             // Enable/Disable Favicons
+
+// Link setup (separate with ["", "", ""],)
+// Format: ["Name", "URL", "Custom Favicon"],
+var links=[
+    // News -           menu-1
+    ["NY Times",                        "http://nytimes.com",                   ""],
+    ["Wall Street Journal",             "http://wsj.com",                       ""],
+    ["Jerusalem Post",                  "http://jpost.com",                     ""],
+    ["The Local - Sweden",              "http://thelocal.se",                   ""],
+    ["Ars Technica",                    "http://arstechnica.com/",              ""],
+    ["The Daily Dot",                   "http://www.dailydot.com/",             ""],
+    ["County 10",                       "http://county10.com",                  ""],
+    ["EFF", "https://www.eff.org", ""],
+    ["SRN News",                        "http://www.srnnews.com/",              ""],
+    ["TechDirt",                        "http://techdirt.com",                  ""],
+    ["Wired",                           "http://www.wired.com/",          ""],
+    ["RSOE EDIS", "http://hisz.rsoe.hu/alertmap/index2.php", ""],
+    ["TorrentFreak",                    "http://torrentfreak.com",              ""],
+    ["Yahoo News",                      "http://news.yahoo.com/",               ""],
+
+    ["",                                "",                                     ""],
+
+    // Linux -          menu-2
+    ["Arch Wiki", "https://wiki.archlinux.org/index.php/Main_page", ""],
+    ["LinuxBBQ",                        "http://linuxbbq.org/bbs",              ""],
+    ["Nixers", "http://nixers.net/", ""],
+    ["Open Source Replacements", "http://www.datamation.com/osrc/article.php/3898906/50-Open-Source-Replacements-for-Really-Expensive-Software.htm", ""],
+    ["GitHub",                             "http://github.com/drchroot",                ""],
+    ["Linux Outlaws", "http://sixgun.org/linuxoutlaws", ""],
+    ["This Week in Linux", "https://www.youtube.com/twildottv", ""],
+    ["Hacker Public Radio", "http://hackerpublicradio.org/", ""],
+    ["FaiFCast", "http://faif.us/", ""],
+    ["Linux Voice", "http://www.linuxvoice.com/category/podcasts/", ""],
+    ["Linux Action Show", "http://www.jupiterbroadcasting.com/show/linuxactionshow/", ""],
+    ["colour lovers", "http://www.colourlovers.com/patterns", ""],
+    ["Color Hex Codes", "http://www.color-hex.com/", ""],
+    ["Paletton Colour Schemes", "http://paletton.com/", ""],
+    ["Practical Typography", "http://practicaltypography.com/", ""],
+
+    ["",                                "",                                     ""],
+
+    // Entertainment -  menu-3
+    ["Hungarian Pilgrimage", "http://gotohungary.com/", ""],
+    ["Nuke Map", "http://www.nuclearsecrecy.com/nukemap/", ""],
+    ["The Reformed Pubcast", "http://reformedpubcast.com/", ""],
+    ["Gaben.tv", "http://gaben.tv/", ""],
+    ["Udacity", "http://www.udacity.com/", ""],
+    ["Think Tutorial", "http://www.thinktutorial.com/", ""],
+    ["DeviantArt",                      "http://deviantart.com/",               ""],
+    ["Imgur",                           "https://imgur.com/",                   ""],
+    ["Reddit",                          "http://reddit.com",                    ""],
+    ["YouTube",                         "https://www.youtube.com/user/WretchedNetwork",                   ""],
+    ["Soundcloud", "https://soundcloud.com/frankdesalvo", ""],
+
+    ["",                                "",                                     ""],
+
+    // Other -          menu-4
+    ["Christ Mail",                     "http://mail.christsaves.us",               ""],
+    ["Mail.com",                        "https://mail.com",                 ""],
+   ["Dropbox",                         "https://www.dropbox.com",              "https://dt8kf6553cww8.cloudfront.net/static/images/favicon-vflk5FiAC.ico"],
+    ["EPTS - Printing.org", "http://www.printing.org/page/2406", ""],
+    ["Facebook",                        "http://facebook.com",                  ""],
+    ["Debian Pastezone",                        "http://paste.debian.net/",                  ""],
+    ["PayPal",                          "http://www.paypal.com/",               ""],
+    ["Userstyles",                      "http://userstyles.org/",               ""],
+    ["Wallgig",                         "http://wallgig.net",                   ""],
+    ["Wallhaven",                       "http://alpha.wallhaven.cc",            ""],
+    ["Baptist Board", "http://www.baptistboard.com/showthread.php?t=90210", ""],
+    ["Puritan Board", "http://www.puritanboard.com/content/", ""],
+];
+
+
+var ss="";
+function init() {
+    for(var i=0;i<search.length;i++) if(search[i][0]=="") ss=search[i][1];
+    if(ss=="") { alert("Error: Missing default search engine!"); }
+
+    build();
+
+    $('q').value="";
+    $('q').focus();
+}
+
+function build() { // Build menus
+    $('mnu').innerHTML="";
+
+    for(var i=0;i<menus.length;i++) { // Menu titles
+        $('mnu').innerHTML+="<li><label>"+menus[i][0]+"</label>\n<ul id=\"mnu_"+(i+1)+"\"></ul></li>";
+        $('mnu_'+(i+1)).style.width=menus[i][1]+"px";
+    }
+
+    var m=1,skip=false;
+    for(var i=0;i<links.length;i++) { // Menu links
+        if(links[i][0]=="" && links[i][1]=="") { skip=true; }
+
+        if(!skip) {
+            var printimg="";
+
+            if(showFavicon) {
+                var favicon;
+                if(links[i][2]!="") favicon=links[i][2];
+                else                favicon=getFavicon(links[i][1]);
+
+                printimg="<img id=\"img_"+i+"\" src=\""+favicon+"\""+" onload=\"javascript:this.style.visibility='inherit';\" /> ";
+            }
+
+            $('mnu_'+m).innerHTML+="<li><a href=\""+links[i][1]+"\" target=\"_self\">"+printimg+links[i][0]+"</a></li>";
+        } else {
+            skip=false; m++;
+        }
+    }
+}
+
+function handleQuery(e,q) { // Handle search query
+    var key=e.keyCode || e.which;
+
+    if(key==13) { // enter
+        if(q.lastIndexOf("!")!=-1) {
+            var x=q.lastIndexOf("!"),found=false;
+            
+            for(var i=0;i<search.length;i++) {
+                if(search[i][0]==q.substr(x)) { // Find "!?"
+                    found=true; window.location=search[i][1]+q.substr(0,x).replace(/&/g,"%26");
+                }
+            }
+            if(!found) { // Invalid "!?", use default
+                window.location=ss+q.substr(0,x).replace(/&/g,"%26");
+            }
+        } else { // "!?" where not specified, use default
+            window.location=ss+q.replace(/&/g,"%26");
+        }
+    }
+}
+
+var m=false;
+function toggle() { // Toggle help
+    m=!m;
+
+    if(m) {
+        $('help').style.opacity=1;
+        $('more').innerHTML="-";
+    } else {
+        $('help').style.opacity=0;
+        $('more').innerHTML="+";
+    }
+
+    $('q').focus();
+}
+
+function fade(x) {
+    if(x==1) {
+        $('form').style.top="-100px";
+        $('form').style.opacity=0;
+        if(m) toggle();
+    } else {
+        $('form').style.top="0px";
+        $('form').style.opacity=1;
+        $('q').focus();
+    }
+}
+
+function getFavicon(url) {
+    var l=document.createElement("a");
+    l.href=url;
+
+    return l.protocol+"//"+l.hostname+"/favicon.ico";
+}
+</script>
+</head>
+<body onload="javascript:init();">
+
+
+<div class="center">
+    <div class="content" id="form">
+        <input type="text" id="q" value="" placeholder="Search..." onkeypress="javascript:handleQuery(event,this.value);" onfocus="this.value=this.value" />
+        <br /><br />
+        <div id="more" onclick="javascript:toggle();">+</div>
+        <br /><br />
+        <div id="help">
+            <ul>
+                <li><b>!g</b> = Search Google (Default)</li>
+                <li><b>!i</b> = Search Google Images</li>
+                <li><b>!y</b> = Search YouTube</li>
+                <li><b>!w</b> = Search Wikipedia</li>
+                <li><b>!m</b> = Search IMDb</li>
+                <li><b>!u</b> = Search Urban Dictionary</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<center>
+    <div id="menu" onmouseover="javascript:fade(1);" onmouseout="javascript:fade(0);">
+        <div id="grip"></div>
+        <ul id="mnu"></ul>
+    </div>
+</center>
+
+
+</body>
+</html>
+
