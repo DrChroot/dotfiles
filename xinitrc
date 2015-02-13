@@ -6,11 +6,10 @@ xsetroot -cursor_name left_ptr &
 hsetroot -fill ~/Pictures/elkmount.jpg -brightness -0.3 &
 xrdb -merge ~/.Xresources &
 setxkbmap -option terminate:ctrl_alt_bksp &
-dunst -c ~/.config/dunst/dunstrc &
 xset +fp /usr/share/fonts/local
 xset fprehash
+light -S 80 &
 compton -b &
-xbindkeys &
 gm &
 sxhkd -c ~/.config/sxhkd/sxhkdrc >/dev/null 2>&1 &
 #x-terminal-emulator -e less ~/git/gm/README &
