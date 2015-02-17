@@ -31,11 +31,11 @@ pingd() {
 # Fill buffer, output it to stdout.
 while :; do
     buf="%{l} %{B#FF25262b} "
-    buf="${buf} %{F#FF1d7192} batt "
+    buf="${buf} %{F#FF7C423A} batt "
     buf="${buf} %{F#FFbadbcb} $(batt) "
-    buf="${buf} %{F#FF1d7192} mem "
+    buf="${buf} %{F#FF7C423A} mem "
     buf="${buf} %{F#FFbadbcb} $(mem) "
-    buf="${buf} %{F#FF1d7192} vol "
+    buf="${buf} %{F#FF7C423A} vol "
     buf="${buf} %{F#FFbadbcb} $(vol) %{c}"
 #    buf="${buf} %{F#FF120f20} $(music) %{r}"
 #    buf="${buf} %{F#FFa69c8e} $(pingd) "
