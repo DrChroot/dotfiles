@@ -1,0 +1,36 @@
+URxvt*internalBorder: 	8
+
+!!*background: 		#1a1a1a
+!!*foreground: 		#f9f9f9
+
+!!URxvt*font:             -*-fixed-*-*-*-*-13-*-*-*-*-*-*-*
+!!URxvt*font: -jmk-neep-medium-r-normal--11-100-75-75-c-60-iso8859-1
+URxvt*font: -jmk-neep alt-medium-r-normal--11-100-75-75-c-60-iso8859-1
+URxvt*scrollBar:        false
+URxvt*matcher.button:   1
+URxvt*colorBD:          #000000
+URxvt*colorUL:          #000000
+URxvt*cursorBlink:      false
+URxvt*saveLines:	0
+URxvt*cursorColor:  	#FFFFFF
+URxvt.lineSpace: -1
+
+URxvt*transparent:    	false
+URxvt*shading: 		15
+URxvt*geometry: 	81x25
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/iceweasel
+URxvt.matcher.button: 1
+URxvt.colorUL: #d86a0e
+
+URxvt*allow_bold:       true
+
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+URxvt.keysym.Control-Left: \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt*keysym.Home: \033[1~
+URxvt*keysym.End: \033[4~
+
+#include </home/drchroot/xcolors/xcolor_code/coco>
