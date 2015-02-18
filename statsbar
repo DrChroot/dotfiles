@@ -14,18 +14,12 @@ clock() {
 batt() {
     cat /sys/class/power_supply/BAT0/capacity 2>/dev/null
 }
-music() {
-    cmusbar 2>/dev/null
-}
 vol() {
     amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/' | sed -e 's/%//g'
 }
 tags() {
     herbstclient list_monitors | awk '{gsub(/"/," ");print $5}'
     #herbstclient tag_status
-}
-pingd() {
-    $HOME/bin/pingd
 }
 
 # Fill buffer, output it to stdout.
@@ -37,8 +31,6 @@ while :; do
     buf="${buf} %{F#FFbadbcb} $(mem) "
     buf="${buf} %{F#FF7C423A} vol "
     buf="${buf} %{F#FFbadbcb} $(vol) %{c}"
-#    buf="${buf} %{F#FF120f20} $(music) %{r}"
-#    buf="${buf} %{F#FFa69c8e} $(pingd) "
     buf="${buf} %{F#FFFFFFFF} $() "
     buf="${buf} %{F#FFFFFFFF} $() "   
     buf="${buf} %{F#FFFFFFFF} $() "   
