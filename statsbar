@@ -24,12 +24,12 @@ tags() {
 
 # Fill buffer, output it to stdout.
 while :; do
-    buf="%{l} %{B#FF25262b} "
-    buf="${buf} %{F#FF7C423A} batt "
+    buf="%{l} %{B#FF0a0909} "
+    buf="${buf} %{F#FFc39a9a} batt "
     buf="${buf} %{F#FFbadbcb} $(batt) "
-    buf="${buf} %{F#FF7C423A} mem "
+    buf="${buf} %{F#FFc39a9a} mem "
     buf="${buf} %{F#FFbadbcb} $(mem) "
-    buf="${buf} %{F#FF7C423A} vol "
+    buf="${buf} %{F#FFc39a9a} vol "
     buf="${buf} %{F#FFbadbcb} $(vol) %{c}"
     buf="${buf} %{F#FFFFFFFF} $() "
     buf="${buf} %{F#FFFFFFFF} $() "   
