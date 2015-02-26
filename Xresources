@@ -5,7 +5,8 @@ URxvt*internalBorder: 	8
 
 !!URxvt*font:             -*-fixed-*-*-*-*-13-*-*-*-*-*-*-*
 !!URxvt*font: -jmk-neep-medium-r-normal--11-100-75-75-c-60-iso8859-1
-URxvt*font: -jmk-neep alt-medium-r-normal--11-100-75-75-c-60-iso8859-1
+!!*font: -jmk-neep alt-medium-r-normal--11-100-75-75-c-60-iso8859-1, -misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1
+*font: -artwiz-lime-medium-r-normal--10-110-75-75-m-50-iso8859-1, -misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1
 URxvt*scrollBar:        false
 URxvt*matcher.button:   1
 URxvt*colorBD:          #000000
@@ -33,4 +34,4 @@ URxvt.keysym.Control-Right: \033[1;5C
 URxvt*keysym.Home: \033[1~
 URxvt*keysym.End: \033[4~
 
-#include </home/drchroot/xcolors/xcolor_code/coco>
+#include </home/drchroot/xcolors/xcolor_code/bernstein>
