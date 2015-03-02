@@ -1,0 +1,44 @@
+#!/bin/bash
+BLACK=#FF525252
+BROWN=#473C33
+RED=#FF036D65
+GREEN=#FFBACD8F
+ODDBROWN=#5c2e2e
+YELLOW=#FFF3D1A7
+BLUE=#FF617C83
+MAGENTA=#FF9F9CA9
+CYAN=#FF88AABB
+WHITE=#FFD2D1D4
+DARK=#FF0C0C0C
+GREY=#FF7C7B78
+
+function statusbar {
+
+	bat() {
+	bat0=$(acpi|cut -d "," -f 2)
+	echo $bat0
+	}
+	
+	clock() {
+	time=$(date "+%A %b %d %Y %R")
+	echo $time
+	}
+	weather() {
+        weather=$(dkegweather)
+        echo $weather
+	}
+	
+	vol() {
+	vol="$(amixer get Master | sed -nr '$ s:.*\[(.+%)].*:\1:p')"
+	echo $vol
+	}
+
+
+	echo "%{B$RED} %{F$WHITE}LinuxBBQ BORK!  %{B-}%{F-} %{r}%{B$WHITE}%{F$RED}  %{B-}%{F-} %{F$WHITE}$(vol)% %{B$BROWN}%{F$WHITE}  %{B-}%{F-} %{F$BROWN}$(bat)% %{B$YELLOW}%{F$DARK}  %{B-}%{F-} %{F$YELLOW}%$(clock)% %{B$ODDBROWN}%{F$WHITE}  %{B-} %{F$WHITE}%$(weather) "
+}
+ while true 
+ do
+	 echo "$(statusbar)"
+	sleep 0.5	
+ done | bar -g 1280x20 -f "-artwiz-lime-medium-r-normal--10-110-75-75-m-50-iso8859-1,-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1" -B "#FF0C0C0C" -F "#FFD2C5BC" -p -d &
+
