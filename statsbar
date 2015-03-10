@@ -37,7 +37,12 @@ function statusbar {
 	echo $up
 	}
 
-	echo "%{F$RED}LinuxBBQ BORK!  %{B-}%{F-} %{r}%{F$WHITE}  %{B-}%{F-} %{F$WHITE}$(vol)% %{F$BLUE}  %{B-}%{F-} %{F$BLUE}$(bat)% %{F$YELLOW}  %{B-}%{F-} %{F$YELLOW}%$(clock) "
+	cur() {
+	cur=$(mpc current)
+	test -n "$cur" && echo $cur || echo "you haz no music going"    
+	}
+
+	echo "%{F$RED}LinuxBBQ BORK!  %{B-}%{F-} %{F$BLUE}$(cur) %{r}%{F$WHITE}  %{B-}%{F-} %{F$WHITE}$(vol)% %{F$BLUE}  %{B-}%{F-} %{F$BLUE}$(bat)% %{F$YELLOW}  %{B-}%{F-} %{F$YELLOW}%$(clock) "
 }
  while true 
  do
