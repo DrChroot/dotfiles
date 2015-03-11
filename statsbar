@@ -1,14 +1,11 @@
 #!/bin/bash
+AZUL=#6487a7
 BLACK=#FF525252
 RED=#FFD86F6B
-GREEN=#FFBACD8F
+PURPLE=#837490
 YELLOW=#FFF3D1A7
 BLUE=#FF617C83
-DANK=#FF515c74
-CYAN=#FF88AABB
 WHITE=#FFD2D1D4
-DARK=#FF0C0C0C
-GREY=#FF7C7B78
 
 function statusbar {
 
@@ -42,7 +39,7 @@ function statusbar {
 	test -n "$cur" && echo $cur || echo "you haz no music going"    
 	}
 
-	echo "%{F$RED}LinuxBBQ BORK!  %{B-}%{F-} %{F$BLUE}$(cur) %{B-}%{F-} %{r}% %{F$BLUE}%$(dkeg) %{B-}%{F-} %{F$WHITE}  %{B-}%{F-} %{F$WHITE}$(vol)% %{F$BLUE}  %{B-}%{F-} %{F$BLUE}$(bat)% %{F$YELLOW}  %{B-}%{F-} %{F$YELLOW}%$(clock) "
+	echo "%{F$RED}LinuxBBQ BORK!  %{B-}%{F-} %{F$AZUL} $(cur) %{B-}%{F-} %{r}% %{F$PURPLE}%$(dkeg) %{B-}%{F-} %{F$WHITE}  %{B-}%{F-} %{F$WHITE}$(vol)% %{F$BLUE}  %{B-}%{F-} %{F$BLUE}$(bat)% %{F$YELLOW}  %{B-}%{F-} %{F$YELLOW}%$(clock) "
 }
  while true 
  do
