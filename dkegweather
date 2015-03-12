@@ -1,0 +1,30 @@
+#! /bin/bash
+
+## requires https://github.com/CarloBarraco/getweather
+## I (dkeg) wrote this to clean up the output
+## change location as needed
+## weather icons are from stlarch font
+## 2015 dkeg modified by Dr_Chroot
+
+## get the weather and format nicely
+## use an underscore with 2 word cities (New_York_City)
+loc='82513'
+sky=$(getweather -l $loc -d)
+temp=$(getweather -l $loc -t -i|cut -d ':' -f2|cut -d '.' -f1)"F"
+wind=$(getweather -l $loc -w -i |cut -d ':' -f2|cut -d '.' -f1)"mph"
+sep=" ‧ "
+
+case $sky in
+    "Overcast clouds")
+	echo "⯄ $sky" ;;
+    "Sky is clear")
+	echo "⯇ $sky" ;;
+    "Light rain")
+	echo "⮿ $sky" ;;
+    "Snow")
+	echo "⯁ $sky" ;;
+    "Moderate rain")
+	echo "⯃ $sky" ;;
+esac
+
+echo $sep⮺ $temp
