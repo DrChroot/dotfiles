@@ -18,12 +18,12 @@ html,body {
     margin: 0; padding: 0; overflow: hidden;
     width: 100%; height: 100%;
     font-family: "Droid Sans", "Liberation Sans", "DejaVu Sans", "Segoe UI", Sans; font-size: 10pt;
-    background: #17181A;
+    background: #9cb898;
 }
 ul, li { list-style-type: none; margin: 0; padding: 0; }
 
-a, a:link, a:visited { color: #aaabad; text-decoration: none; }
-a:hover, a:active    { color: #cecfd1; }
+a, a:link, a:visited { color: #70896C; text-decoration: none; }
+a:hover, a:active    { color: #66966C; }
 
 .center { position: relative; width: 100%; height: 100%; }
     .center .content {
@@ -34,7 +34,7 @@ a:hover, a:active    { color: #cecfd1; }
 
 #q {
     width: 500px;
-    background: #27282B; color: #cecfd1;
+    background: #5c5e63; color: #cecfd1;
     border: 0px solid #27282B; border-radius: 0px;
     padding: 8px 8px; font-size: 12pt;
 }
@@ -42,7 +42,7 @@ a:hover, a:active    { color: #cecfd1; }
     #q:hover { border-color: #393A3D; }
 
 #more {
-    background: #27282B; color: #aaabad; border-radius: 0px;
+    background: #5c5e63; color: #cecfd1; border-radius: 0px;
     cursor: pointer; display: inline-block;
     font-size: 18pt; line-height: 26px; /* vertical align "+" button */
     width: 24px; height: 24px;
@@ -51,7 +51,7 @@ a:hover, a:active    { color: #cecfd1; }
     #help {
         display: inline-block; width: 320px; cursor: default;
         font-family: "PragmataPro", "Droid Sans Mono", "Liberation Sans Mono", "DejaVu Sans Mono", "Consolas", "Lucida Console", monospace;
-        background: #27282B; color: #aaabad;
+        background: #27282B; color: #5C5E63;
         padding: 8px; text-align: left; border-radius: 0px;
         opacity: 0; transition: .2s ease-out;
     }
@@ -59,7 +59,7 @@ a:hover, a:active    { color: #cecfd1; }
 #menu {
     position: fixed; bottom: -64px; left: 0; z-index: 11;
     width: 100%; height: 128px;
-    background: transparent; color: #aaabad; cursor: default;
+    background: transparent; color: #5C5E63; cursor: default;
     transition: .2s ease-out;
 }
     #menu:hover            { bottom: 0; }
@@ -138,16 +138,17 @@ var links=[
 
     // Linux -          menu-2
     ["Arch Wiki", "https://wiki.archlinux.org/index.php/Main_page", ""],
-    ["LinuxBBQ",                        "http://linuxbbq.org/bbs",              ""],
-    ["Nixers", "http://nixers.net/", ""],
+["LinuxBBQ",                        "http://linuxbbq.org/bbs",              ""],
+    ["Gentoo Wiki", "https://wiki.gentoo.org/wiki/", ""],
+["Nixers", "http://nixers.net/", ""],
+    ["z3bra", "blog.z3bra.org", ""],
     ["Open Source Replacements", "http://www.datamation.com/osrc/article.php/3898906/50-Open-Source-Replacements-for-Really-Expensive-Software.htm", ""],
     ["GitHub",                             "http://github.com/drchroot",                ""],
-    ["Linux Outlaws", "http://sixgun.org/linuxoutlaws", ""],
-    ["This Week in Linux", "https://www.youtube.com/twildottv", ""],
-    ["Hacker Public Radio", "http://hackerpublicradio.org/", ""],
+    ["Emacs-fu", "http://emacs-fu.blogspot.com/", ""],
+    ["Commandline-fu", "http://www.commandlinefu.com/commands/browse", ""],
+    ["ErgoEmacs", "http://ergoemacs.org/emacs/emacs.html", ""],
     ["FaiFCast", "http://faif.us/", ""],
     ["Linux Voice", "http://www.linuxvoice.com/category/podcasts/", ""],
-    ["Linux Action Show", "http://www.jupiterbroadcasting.com/show/linuxactionshow/", ""],
     ["colour lovers", "http://www.colourlovers.com/patterns", ""],
     ["Color Hex Codes", "http://www.color-hex.com/", ""],
     ["Paletton Colour Schemes", "http://paletton.com/", ""],
