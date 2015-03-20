@@ -1,0 +1,78 @@
+mpc status
+mpc clear
+mpc ls
+mpc ls | mpc add
+mpc random off
+exit
+cd git
+cd ~/git
+cd dotfiles/
+cp dkegweather /usr/bin
+sudo cp dkegweather /usr/bin
+dkegweather
+weather -l 82520
+weather -l -t 82520
+weather -l -i 82520
+weather -l -t 82520
+weather -l 82520 -t
+weather -l 82520 -t -l
+weather -l 82520 -t -i
+sudo chmod 777 /usr/bin/dkegweather 
+dkegweather
+dkegweather
+clear
+
+cd ~/usr/bin/local
+cd /usr/bin/local
+cd /usr/bin
+ls
+ls bbq*
+cd ..
+ls
+cd share
+ls
+cd ..
+ls
+cd games/
+ls
+cd ~/Videos/
+ls
+ls *.webm
+mpv gymnistfail.mp4 
+cd ~/Desktop/
+ls
+mpv Better\ Call\ Saul\ S01E07\ Bingo\ \(1920x1080\)\ \[Phr0stY\].mkv 
+clear
+
+mpv Better\ Call\ Saul\ S01E07\ Bingo\ \(1920x1080\)\ \[Phr0stY\].mkv 
+cd Videos/
+youtube-dl https://www.youtube.com/watch?x-yt-cl=85114404
+youtube-dl https://www.youtube.com/watch?v=X1PINgqVDxk
+xrdb ~/.Xresources_default
+xrdb ~/.Xresources
+xrdb ~/.Xresources
+cd ~/git/dotfiles/
+rm dkegweather 
+git add dkegweather 
+git commit -m "updated to new dkegweather"
+git push origin master
+which env-info
+cd /usr/bin
+ls
+sudo cp ~/git/dotfiles/dkegweather /usr/bin
+sudo chmod 777 dkegweather  
+chmod +x dkegweather 
+sudo chmod +x dkegweather 
+dkegweather
+weather -l Bangkok -t -i
+weather -l Bangkok -w -i
+weather -l Bangkok -d
+cd ~/git/dotfiles/
+ls
+chmod +x dkegweather 
+./dkegweather 
+weather -l Bangkok -t -i
+weather -l Bangkok -t -i
+./dkegweather -l Bangkok -t -i
+sudo cp dkegweather /usr/bin
+dkegweather
