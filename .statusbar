@@ -49,4 +49,4 @@ function statusbar {
  do
 	 echo "$(statusbar)"
 	sleep 0.5	
- done | bar -g 1280x20 -f "-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1, -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1" -B "#FF0C0C0C" -F "#FFD2C5BC" -p -d &
+ done | bar -g 610x25+270+25 -f "-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1, -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1" -B "#FF0C0C0C" -F "#FFD2C5BC" -p -d &
