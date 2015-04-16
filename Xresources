@@ -4,10 +4,9 @@ URxvt*internalBorder: 	8
 !!*foreground: 		#f9f9f9
 
 !!URxvt*font:             -*-fixed-*-*-*-*-13-*-*-*-*-*-*-*
-!!URxvt*font: -jmk-neep-medium-r-normal--11-100-75-75-c-60-iso8859-1
-!!*font: -jmk-neep alt-medium-r-normal--11-100-75-75-c-60-iso8859-1, -misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1
-!!*font: -artwiz-lime-medium-r-normal--10-110-75-75-m-50-iso8859-1, -misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1, -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1
-*font: -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1
+!!*font: -artwiz-lime-medium-r-normal--10-110-75-75-m-50-iso8859-1
+*font: -misc-tamsyn-medium-r-normal--12-87-100-100-c-60-iso8859-1
+*boldFont: -misc-tamsyn-medium-r-normal--12-87-100-100-c-60-iso8859-1
 URxvt*scrollBar:        false
 URxvt*matcher.button:   1
 URxvt*colorBD:          #000000
@@ -22,9 +21,8 @@ URxvt*shading: 		15
 URxvt*geometry: 	81x25
 
 URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/iceweasel
+URxvt.urlLauncher: /usr/bin/iceweasel
 URxvt.matcher.button: 1
-URxvt.colorUL: #d86a0e
 
 URxvt*allow_bold:       true
 
@@ -37,4 +35,4 @@ URxvt*keysym.End: \033[4~
 
 !!Xcursor.theme: bridge
 
-#include </home/drchroot/xcolors/xcolor_code/pidgeon>
+#include </home/drchroot/xcolors/xcolor_code/darktrans>
