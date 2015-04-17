@@ -17,8 +17,8 @@
 html,body {
     margin: 0; padding: 0; overflow: hidden;
     width: 100%; height: 100%;
-    font-family: "Droid Sans", "Liberation Sans", "DejaVu Sans", "Segoe UI", Sans; font-size: 10pt;
-    background: #EED1F6;
+    font-family: "Tamsyn", "Droid Sans", "DejaVu Sans", "Segoe UI", Sans; font-size: 10pt;
+    background: #F5FFA3;
 }
 ul, li { list-style-type: none; margin: 0; padding: 0; }
 
@@ -50,7 +50,7 @@ a:hover, a:active    { color: #66966C; }
 }
     #help {
         display: inline-block; width: 320px; cursor: default;
-        font-family: "PragmataPro", "Droid Sans Mono", "Liberation Sans Mono", "DejaVu Sans Mono", "Consolas", "Lucida Console", monospace;
+        font-family: "Tamsyn", "Droid Sans Mono", "Liberation Sans Mono", "DejaVu Sans Mono", "Consolas", "Lucida Console", monospace;
         background: #27282B; color: #5C5E63;
         padding: 8px; text-align: left; border-radius: 0px;
         opacity: 0; transition: .2s ease-out;
@@ -288,7 +288,7 @@ function getFavicon(url) {
 
 <div class="center">
     <div class="content" id="form">
-        <input type="text" id="q" value="" placeholder="Search..." onkeypress="javascript:handleQuery(event,this.value);" onfocus="this.value=this.value" />
+        <input type="text" id="q" value="" placeholder="Your most pressing question here..." onkeypress="javascript:handleQuery(event,this.value);" onfocus="this.value=this.value" />
         <br /><br />
         <div id="more" onclick="javascript:toggle();">+</div>
         <br /><br />
