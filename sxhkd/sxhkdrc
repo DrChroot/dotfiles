@@ -1,0 +1,26 @@
+super + Q
+      pkill swm
+super + Return
+      urxvt
+alt + p
+      dmenu_run -b -i -p bork -fn -misc-tamsyn-medium-r-normal--12-87-100-100-c-60-iso8859-1 -nb "#1a1a1a" -nf "#c0c0c0" -sb "#d86d80" -sf "#1a1a1a"
+super + x
+      killw $(pfw)
+super + Escape
+      kill -USR1 -x sxhkd
+super + Down
+      wmv 0 10 $(pfw)
+super + Up
+      wmv 0 -10 $(pfw)
+super + Right
+      wmv 10 0 $(pfw)
+super + Left
+      wmv -10 0 $(pfw)
+super + l
+      wrs 10 0 $(pfw)
+super + h
+      wrs -10 0 $(pfw)
+super + j
+      wrs 0 -10 $(pfw)
+super + k
+      wrs 0 10 $(pfw)
