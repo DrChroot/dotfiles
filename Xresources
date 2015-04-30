@@ -35,4 +35,4 @@ URxvt*keysym.End: \033[4~
 
 !!Xcursor.theme: bridge
 
-#include </home/drchroot/xcolors/xcolor_code/darktrans>
+#include </home/drchroot/.newcolour>

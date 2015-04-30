@@ -3,13 +3,13 @@
 #icons are from stlarch, but dkegweather requires lemon as well ;)
 
 #!/bin/bash
-AZUL=#FF6487a7
-BLACK=#FF525252
-RED=#FFD86F6B
-PURPLE=#837490
-YELLOW=#FFc5a464
-BLUE=#FF617C83
-WHITE=#FFD2D1D4
+BLUE=#FF4B5F71
+BLACK=#FF020D16
+RED=#FF2A4E6E
+GREEN=#FF2D6996
+YELLOW=#FF49789E
+#BLUE=#FF3465A4
+WHITE=#FFA3BDBF
 
 function statusbar {
 
@@ -43,10 +43,12 @@ function statusbar {
 	test -n "$cur" && echo $cur || echo "you haz no music going"    
 	}
 
-	echo "%{F$RED}   %{B-}%{F-} %{F$RED}LinuxBBQ BORK!%{B-}%{F-} %{F$AZUL}  %{B-}%{F-}  %{F$AZUL}$(cur) %{B-}%{F-} %{r}% %{F$WHITE}  %{B-}%{F-} %{F$WHITE}$(vol)% %{F$BLUE}  %{B-}%{F-} %{F$BLUE}$(bat)% %{F$YELLOW}  %{B-}%{F-} %{F$YELLOW}%$(clock) "
+	echo "%{F$RED}   %{B-}%{F-} %{F$RED}LinuxBBQ BORK!%{B-}%{F-} %{F$BLUE}  %{B-}%{F-}  %{F$BLUE}$(cur) %{B-}%{F-} %{r}% %{F$WHITE}  %{B-}%{F-} %{F$WHITE}$(vol)% %{F$GREEN}  %{B-}%{F-} %{F$GREEN}$(bat)% %{F$YELLOW}  %{B-}%{F-} %{F$YELLOW}%$(clock) "
 }
  while true 
  do
 	 echo "$(statusbar)"
 	sleep 0.5	
  done | bar -g 1280x25 -f "-artwiz-lime-medium-r-normal--10-110-75-75-m-50-iso8859-1, -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1" -B "#FF0C0C0C" -F "#FFD2C5BC" -p -d &
+
+#geo 1280x25
