@@ -6,18 +6,16 @@ xset -dpms &
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
-# Xft settings
-Xft.dpi:        96
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintslight
-
 # set a mouse
 xsetroot -cursor_name left_ptr &
 
 # set the X backdrop
-hsetroot -fill ~/pics/spaced_blue.jpg &
+
+# a very basic one
+# xsetroot -bg "#111111" -mod 3 3 &
+
+# a shiny one
+hsetroot -fill ~/pics/jpg/turntable1.jpg &
 
 # source the terminal colors
 xrdb -merge ~/.Xresources &
@@ -25,14 +23,10 @@ xrdb -merge ~/.Xresources &
 # Ctrl-Alt-Backspace kills the X session
 setxkbmap -option terminate:ctrl_alt_bksp &
 
-# notifications
-dunst -c ~/.config/dunst/dunstrc &
-# desktop management
+# drop some shadows
+#compton -bcCG -i 1.0 -e 1.0 -m 1.0  --sw-opti &
+compton --config ~/.compton.conf &
+sxhkd &
 gm &
-#eyecandy
-compton &
-# keybindings
-sxhkd -c ~/.config/sxhkd/sxhkdrc >/dev/null 2>&1 &
-#wm
-exec swm
-#exec dbus-launch --exit-with-session openbox-session
+
+exec swm #jwm
