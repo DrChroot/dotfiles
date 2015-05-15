@@ -1,12 +1,15 @@
+# slmenu shortcut, thanks K. Mandla
+alias xe='eval `slmenu -p ">>>" < ~/.slmenu` '
+
 alias edit='zile'
 alias st='stterm # -f <font name> -g <geometry>'
 
 alias upd='sudo apt update'
 alias upg='sudo apt update && sudo apt dist-upgrade'
-alias purge='sudo apt-get purge'
+alias purge='sudo apt purge'
+alias mempurge='sync && echo 3 > /proc/sys/vm/drop_caches'
 alias brc='nano ~/.bashrc'
-alias sshchat='ssh jaroslav@104.236.98.95'
-alias search='apt search'
+alias search='apt-cache search'
 alias policy='apt-cache policy'
 alias depends='apt-cache depends'
 alias ins='sudo apt install'
