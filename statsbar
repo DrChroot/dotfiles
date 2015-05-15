@@ -1,6 +1,6 @@
 #dotdev's status bar
 #reconstructed in a profound manner
-#icons are from stlarch, but dkegweather requires lemon as well ;)
+#icons are from siji (which is a Google away on Github - highly recommended iconic font)
 
 #!/bin/bash
 BLUE=#FF424357
