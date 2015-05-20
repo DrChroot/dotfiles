@@ -1,13 +1,13 @@
 #dotdev's status bar
 #reconstructed in a profound manner
-#icons are from siji (which is a Google away on Github - highly recommended iconic font)
+#icons are from stlarch, but dkegweather requires lemon as well ;)
 
 #!/bin/bash
-BLUE=#FF424357
+BLUE=#FF5D5971
 BLACK=#FFCECECE
 RED=#FF566FB4
 GREEN=#FFA08BA0
-YELLOW=#FFD0917F
+YELLOW=#FF8a6d79
 #BLUE=#FF
 WHITE=#FFffffff
 
@@ -30,7 +30,7 @@ function statusbar {
 
 	cur() {
 	cur=$(mpc current)
-	test -n "$cur" && echo $cur || echo "you haz no music going"    
+	test -n "$cur" && echo $cur || echo "you ain't got nuthin' playin' "    
 	}
 
 	echo "%{B$YELLOW}%{F$BLACK}  %{B-}%{F-}  %{F$BLACK}$(cur) %{B-}%{F-} %{r}% %{F$BLUE}  %{B-}%{F-} %{F$BLACK}$(vol)% %{F$BLUE}  %{B-}%{F-} %{F$BLACK}$(bat)% %{F$BLUE}  %{B-}%{F-} %{F$BLACK}%$(clock)  "
