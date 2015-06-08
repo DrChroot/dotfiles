@@ -1,0 +1,17 @@
+#include </home/drchroot/src/dotfiles/xorg/.fontconfig>
+
+!URxvt configs
+
+*scrollBar:		false
+*internalBorder:	8
+*externalBorder:	6
+
+URxvt.colorIT:      #87af5f
+URxvt.colorBD:      #d7d7d7
+URxvt.colorUL:      #87afd7
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/iceweasel
+URxvt.matcher.button: 1
+
+#include </home/drchroot/.Xresources_colors>
