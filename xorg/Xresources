@@ -1,57 +1,17 @@
-*Rxvt.iconFile: 	/usr/share/icons/Tango/32x32/apps/terminal.png
-*Rxvt*internalBorder:	8
+#include </home/drchroot/src/dotfiles/xorg/.fontconfig>
 
-xosview*background:	#1a1a1a
-xosview*font:		-erus-erusfont-medium-r-normal--11-80-100-100-c-60-iso10646-1
-xosview*memGraph: 	True
-xosview*usedlabels: 	True
+!URxvt configs
 
-!*font:			-*-fixed-medium-r-semicondensed-*-13-*-*-*-*-*-*-*
-!*boldFont:		-*-fixed-bold-r-semicondensed-*-13-*-*-*-*-*-*-*
-!*font: -erus-erusfont-medium-r-normal--11-80-100-100-c-60-iso10646-1
-!*boldFont: -erus-erusfont-medium-r-normal--11-80-100-100-c-60-iso10646-1
-*font: -artwiz-lime-medium-r-normal--10-110-75-75-m-50-iso8859-1
-*boldFont: -artwiz-lime-medium-r-normal--10-110-75-75-m-50-iso8859-1
+*scrollBar:		false
+*internalBorder:	8
+*externalBorder:	6
 
-*lineSpace: 1
-!*Rxvt*background:       #000000
-!*Rxvt*foreground:       #ffffff
-*Rxvt*scrollBar:        false
-*Rxvt*secondaryscroll:  true
-*Rxvt*matcher.button:   1
-*Rxvt*colorBD:          #268bd2
-*Rxvt*colorUL:          #859900
-*Rxvt*cursorBlink:      false
+URxvt.colorIT:      #87af5f
+URxvt.colorBD:      #d7d7d7
+URxvt.colorUL:      #87afd7
 
-*Rxvt*cursorColor:  #ffffff
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/iceweasel
+URxvt.matcher.button: 1
 
-!URxvt.depth: 32 !32
-!URxvt.background: [90]#000000
-*Rxvt*shading: 15
-*Rxvt*geometry: 81x26
-*Rxvt*fading: 30
-
-URxvt.perl-ext-common : default,matcher
-URxvt.urlLauncher     : chromium
-URxvt.matcher.button  : 1
-
-
-!Xft*dpi:                96
-!Xft*antialias:          true
-!Xft*hinting:            none
-!Xft.autohint:           0
-!Xft.antialias:          1
-!Xft.hinting:            true
-!Xft.hintstyle:          hintfull
-!Xft.dpi:                96
-!Xft.rgba:               rgb
-!Xft.lcdfilter:          lcddefault
-
-*Rxvt*dynamicColors:    on
-*Rxvt*depth:            24
-
-*Rxvt*mapAlert:         true
-*Rxvt*visualBell:       true
-*Rxvt*URgentOnBell:     true
-
-#include </home/drchroot/xcolors/xcolor_code/flatgrayone>
+#include </home/drchroot/.Xresources_colors>
