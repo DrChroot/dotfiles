@@ -1,0 +1,3 @@
+#!/bin/bash
+echo mpc current >> ~/audio/listening
+echo successful

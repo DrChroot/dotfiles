@@ -7,13 +7,16 @@ BLUE=#FFA296B0
 BLACK=#FFD1BDB8
 RED=#FF8C635A
 GREEN=#FFC4C195
-YELLOW=#FFC4C195
+YELLOW=#FFBFA599
 #BLUE=#FF
+MAG=#FF71686F
+CYAN=#FF5C4646
 WHITE=#FFC4C195
 BGC=#FF231e1d
 FGC=#FFD1BDB8
 GAP1=" "
 GAP2="  "
+GAP3="                      "
 
 function statusbar {
 
@@ -39,15 +42,15 @@ function statusbar {
 
 	cur() {
 	cur=$(mpc current)
-	test -n "$cur" && echo $cur || echo "you ain't got nuthin' playin' "    
+	test -n "$cur" && echo $cur || echo "Mating Ritual of the Lonely Emacs User - GekkoP"    
 	}
 
-	echo "$GAP2%{F$RED}$GAP1$(mem)$GAP2%{F$BLUE}$GAP2$(vol){F-}$GAP2%{F$GREEN}%{F$GREEN}$GAP1$(cur) %{B-}%{F-} %{r}% %{F$BLUE}  %{B-}%{F-} %{F$BLACK}$(bat)% %{F$BLUE}  %{B-}%{F-} %{F$BLACK}%$(clock)  "
+	echo "$GAP2%{F$CYAN}$GAP1$(mem)$GAP2%{F$RED}$GAP2$(vol){F-}%{r}%$GAP2%{F$GREEN}%{F$GREEN}$GAP1$(cur) %{B-}%{F-}$GAP3$GAP2$GAP2$GAP2%{F$BLUE}  %{B-}%{F-} %{F$BLUE}$(bat)% %{F$YELLOW}  %{B-}%{F-} %{F$YELLOW}%$(clock)  "
 }
  while true 
  do
 	 echo "$(statusbar)"
 	sleep 0.5	
- done | lemonbar -g 1280x25 -f "-erus-erusfont-medium-r-normal--11-80-100-100-c-60-iso10646-1" -f "-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1" -B "#FF231E1D" -F "#FFD1BDB8" -p -d &
+ done | lemonbar -g 900x28+190+25 -f "-erus-erusfont-medium-r-normal--11-80-100-100-c-60-iso10646-1" -f "-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1" -B "#FF231E1D" -F "#FFD1BDB8" -p -d &
 
 #geo 1280x25
