@@ -1,0 +1,16 @@
+#!/bin/bash
+
+xset s off &
+xset -dpms &
+xset +fp /usr/share/fonts/local
+xset fp rehash
+xsetroot -cursor_name left_ptr &
+hsetroot -fill ~/pics/walls/landscape/iran.jpg &
+xrdb -merge ~/.Xresources &
+setxkbmap -option terminate:ctrl_alt_bksp &
+mpd &
+[[ -z $(pgrep -xU $UID mpdscribble) ]] && mpdscribble &
+compton --config ~/.compton.conf &
+sxhkd &
+gm &
+exec swm 
