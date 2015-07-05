@@ -96,6 +96,7 @@ alias search='apt-cache search'
 alias policy='apt-cache policy'
 alias depends='apt-cache depends'
 alias ins='sudo apt install'
+alias mpdviz='cava -i fifo -c blue -b 90 -s 100'
 
 ## Space on drive
 alias disk='du -S | sort -n -r |more'
@@ -144,3 +145,5 @@ alias md='mkdir -p -v'
 alias rd='rmdir -v'
 
 alias manb='man -H'
+
+export PATH=/home/drchroot/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games

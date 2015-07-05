@@ -1,4 +1,4 @@
-*Rxvt.iconFile: 	/usr/share/icons/Tango/32x32/apps/terminal.png
+*Rxvt.iconFile: 	/usr/share/icons/Adwaita/32x32/apps/utilities-terminal.png
 o*Rxvt*internalBorder:	8
 
 !*background: #000000
@@ -9,8 +9,9 @@ xosview*font:		-*-terminus-medium*-*-*-*-13-*-*-*-*-*-*-*
 xosview*memGraph: 	True
 xosview*usedlabels: 	True
 
-*font: -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
-*boldFont: -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
+*font: -windows-proggyclean-medium-r-normal--13-80-96-96-c-70-iso8859-1
+
+!*letterSpace: -1
 
 *Rxvt*background:       #000000
 *Rxvt*foreground:       #ffffff
@@ -21,10 +22,13 @@ xosview*usedlabels: 	True
 *Rxvt*colorUL:          #859900
 *Rxvt*cursorBlink:      false
 
-URxvt.depth: 32
-URxvt.background: [95]#000000
 
-*Rxvt*allow_bold:       true
+URxvt*.transparent: true
+! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*.shading: 5
+
+
+*Rxvt*allow_bold:       false
 
 Xft*dpi:                96
 Xft*antialias:          true
@@ -37,6 +41,10 @@ Xft.dpi:                96
 Xft.rgba:               rgb
 Xft.lcdfilter:          lcddefault
 
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/iceweasel
+URxvt.matcher.button: 1
+
 *Rxvt*dynamicColors:    on
 *Rxvt*depth:            24
 
@@ -44,4 +52,4 @@ Xft.lcdfilter:          lcddefault
 *Rxvt*visualBell:       true
 *Rxvt*URgentOnBell:     true
 
-#include </home/jaro/xcolors/xcolor_code/sead>
+#include </home/jaro/xcolors/xcolor_code/hodge>
