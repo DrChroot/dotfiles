@@ -1,0 +1,13 @@
+#!/bin/bash
+xset s off &
+xset -dpms &
+xset +fp /usr/share/fonts/local
+xset fp rehash
+xsetroot -cursor_name left_ptr &
+# xsetroot -bg "#111111" -mod 3 3 &
+hsetroot -tile ~/pics/pattern_157.gif -gamma 3 -tint "#a5baff" &
+xrdb -merge ~/.Xresources &
+setxkbmap -option terminate:ctrl_alt_bksp &
+exec i3
+
+
