@@ -9,7 +9,9 @@ xosview*font:		-*-terminus-medium*-*-*-*-13-*-*-*-*-*-*-*
 xosview*memGraph: 	True
 xosview*usedlabels: 	True
 
-*font: -windows-proggyclean-medium-r-normal--13-80-96-96-c-70-iso8859-1
+!*font: -windows-proggyclean-medium-r-normal--13-80-96-96-c-70-iso8859-1
+*font: -ypn-envypn-medium-r-normal--13-130-75-75-c-90-iso8859-1
+*boldFont: -ypn-envypn-medium-r-normal--13-130-75-75-c-90-iso8859-1
 
 !*letterSpace: -1
 
@@ -52,4 +54,4 @@ URxvt.matcher.button: 1
 *Rxvt*visualBell:       true
 *Rxvt*URgentOnBell:     true
 
-#include </home/jaro/xcolors/xcolor_code/hodge>
+#include </home/jaro/xcolors/xcolor_code/neiner>
