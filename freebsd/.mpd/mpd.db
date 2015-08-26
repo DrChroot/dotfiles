@@ -1,0 +1,60 @@
+info_begin
+format: 1
+mpd_version: 0.18.23
+fs_charset: UTF-8
+tag: Artist
+tag: ArtistSort
+tag: Album
+tag: AlbumArtist
+tag: AlbumArtistSort
+tag: Title
+tag: Track
+tag: Name
+tag: Genre
+tag: Date
+tag: Composer
+tag: Performer
+tag: Disc
+tag: MUSICBRAINZ_ARTISTID
+tag: MUSICBRAINZ_ALBUMID
+tag: MUSICBRAINZ_ALBUMARTISTID
+tag: MUSICBRAINZ_TRACKID
+info_end
+song_begin: VERIDIA _ 'Mystery Of The Invisible' [official audio]-EyDdYkqsHKI.m4a
+Time: 218
+mtime: 1429957751
+song_end
+song_begin: Will Smith - Just the two of us.mp3
+Time: 319
+Artist: Will Smith
+Title: Just the two of us
+mtime: 1440537153
+song_end
+song_begin: Will Smith - Miami.mp3
+Time: 199
+Artist: Will Smith
+Title: Miami
+mtime: 1440537172
+song_end
+song_begin: Lecrae - Don't Wanna Waste My Life.mp3
+Time: 246
+Artist: Lecrae
+AlbumArtist: Lecrae
+Title: Don't Waste Your Life (feat. Cam, Dwayne Tryumf)
+Album: Rebel
+Track: 2
+Date: 2008
+Genre: Christian Hip Hop
+Composer: Cameron Dukes/Dion Burroughs/Dwayne Triumph/Lacrae Moore
+mtime: 1440536371
+song_end
+song_begin: For KING & COUNTRY - Run Wild. (feat. Andy Mineo).mp3
+Time: 241
+Artist: for KING & COUNTRY
+Title: Run Wild. (feat. Andy Mineo)
+Album: Run Wild. Live Free. Love Strong.
+Track: 1
+Date: 2014
+Genre: Christian
+mtime: 1440536611
+song_end

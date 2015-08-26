@@ -28,25 +28,39 @@ URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/local/bin/firefox
 URxvt.matcher.button: 1
 
-! dkeg 2014
-! barn
+! special
+*.foreground:   #bd9b85
+*.background:   #1a1a1a
+*.cursorColor:  #bd9b85
 
-*background:#131313
-*foreground:#abacae
+! black
+*.color0:       #2e2922
+*.color8:       #a3855d
 
-*color0: #222222
-*color1: #54342a
-*color2: #3e3329
-*color3: #332F2E
-*color4: #3A3E45
-*color5: #443B37
-*color6: #a4a19d
-*color7: #807c75
-*color8: #222222
-*color9: #54342a
-*color10: #3e3329
-*color11: #332f2e
-*color12: #3a3e45
-*color13: #443b37
-*color14: #a4a19d
-*color15: #807c75
+! red
+*.color1:       #453a2f
+*.color9:       #a79279
+
+! green
+*.color2:       #534739
+*.color10:      #ac9a86
+
+! yellow
+*.color3:       #6b6051
+*.color11:      #b0a394
+
+! blue
+*.color4:       #7e8171
+*.color12:      #b9a691
+
+! magenta
+*.color5:       #8a7762
+*.color13:      #c6b3a2
+
+! cyan
+*.color6:       #8a5c3a
+*.color14:      #cd9f69
+
+! white
+*.color7:       #988772
+*.color15:      #d4c7bc
