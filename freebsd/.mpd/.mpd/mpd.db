@@ -1,0 +1,49 @@
+info_begin
+format: 1
+mpd_version: 0.18.23
+fs_charset: UTF-8
+tag: Artist
+tag: ArtistSort
+tag: Album
+tag: AlbumArtist
+tag: AlbumArtistSort
+tag: Title
+tag: Track
+tag: Name
+tag: Genre
+tag: Date
+tag: Composer
+tag: Performer
+tag: Disc
+tag: MUSICBRAINZ_ARTISTID
+tag: MUSICBRAINZ_ALBUMID
+tag: MUSICBRAINZ_ALBUMARTISTID
+tag: MUSICBRAINZ_TRACKID
+info_end
+song_begin: John Denver - Take Me Home, Country Roads.mp3
+Time: 191
+Artist: John Denver
+Title: Take Me Home, Country Roads
+mtime: 1440739526
+song_end
+song_begin: J Dilla - Geek Down.mp3
+Time: 80
+Artist: J Dilla
+AlbumArtist: J Dilla
+Title: Geek Down
+Album: Donuts
+Track: 20
+Date: 2006
+Genre: Hip-Hop
+mtime: 1440737752
+song_end
+song_begin: Sonata Arctica - Shy.mp3
+Time: 259
+Artist: Sonata Arctica
+Title: Shy
+Album: Winterheart's Guild
+Track: 14
+Date: 2003
+Genre: Metal
+mtime: 1440739229
+song_end

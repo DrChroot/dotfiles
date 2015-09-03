@@ -1,16 +1,12 @@
-#!/usr/local/bin/bash
-#xset s off &
-#xset -dpms &
-#xset +fp /usr/share/fonts/local
-#xset fp rehash
-#xsetroot -cursor_name left_ptr &
-#xrdb -merge ~/.Xresources &
-#setxkbmap -option terminate:ctrl_alt_bksp &
-#xsetroot -mod 3 5 -bg '#111111' -fg '#555555' &
-hsetroot -fill ~/pics/mexicoflag.jpg &
-compton --config ~/.config/compton.conf &
-#gm &
-#sxhkd &
-urxvt &
-emacs &
-exec cwm
+#!/bin/sh
+xset +fp /usr/share/fonts/local
+xset fp rehash
+xrdb -merge ~/.Xresources &
+sxhkd -c ~/.sxhkdrc &
+compton --config ~/.compton.conf &
+#xsetroot -mod 8 8 -bg '#132132' -fg '#333333' &
+hsetroot -fill ~/pics/unsplash1.jpg &
+sleep 3 && urxvt &
+exec swm
+
+
