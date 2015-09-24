@@ -1,0 +1,31 @@
+super + Q
+	pkill swm
+
+super + Return
+	urxvt
+
+super + space
+	dmenu_run
+super + x
+	killw $(pfw)
+
+super + Escape
+	kill -USR1 -x sxhkd
+
+super + Down
+	wmv 0 10 $(pfw)
+super + Up
+	wmv 0 -10 $(pfw)
+super + Right
+	wmv 10 0 $(pfw)
+super + Left
+	wmv -10 0 $(pfw)
+
+super + l
+	wrs 10 0 $(pfw)
+super + h
+	wrs -10 0 $(pfw)
+super + j
+	wrs 0 -10 $(pfw)
+super + k
+	wrs 0 10 $(pfw)
