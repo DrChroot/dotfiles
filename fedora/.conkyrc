@@ -1,0 +1,70 @@
+double_buffer yes
+background yes
+
+use_xft yes
+xftfont Clean:size=7
+xftalpha 0.8
+
+update_interval 1.0
+ 
+total_run_times 0
+default_color white
+default_shade_color black
+default_outline_color white
+own_window yes
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,skip_taskbar,sticky,skip_pager
+no_buffers yes
+minimum_size 200 5
+maximum_width 200
+draw_shades no
+draw_outline no
+draw_borders no
+stippled_borders 0
+alignment top_right
+gap_x 20
+gap_y 20
+uppercase no
+
+#use_spaces yes
+
+color0 7d7d7d
+color1 slategrey
+color2 ffffff
+
+TEXT
+${color2}${alignr}Time / Info
+${color1}date:   ${color0}${time %a,} ${time %e %B %G}
+${color1}time:   ${color0}${time %H:%M:%S}
+${color1}uptime: ${color0}$uptime
+${color1}os:     ${color0}${sysname} ${kernel}
+${stippled_hr 2 1}
+${color2}${alignr}CPU
+${color1}freq:   ${color0}${freq}Mhz
+${color1}core 1: ${color0}${cpu cpu1}% ${alignr}${cpubar cpu1 6,135}
+${color1}core 2: ${color0}${cpu cpu2}% ${alignr}${cpubar cpu2 6,135}
+
+${color1}CPU Temp: ${alignr}${acpitemp}C$color
+${color0}${stippled_hr 2 1}
+${color2}${alignr}Memory
+${color1}ram: ${color0}$memperc%${alignr}${membar 6,135}
+${stippled_hr 2 1}
+${color2}${alignr}Space
+${color1}home: ${alignr}${color0}${fs_free /home}/${fs_size /home}
+${fs_bar /home}
+${if_mounted /mnt} 
+${color1}mnt: ${alignr}${color0}${fs_free /mnt}/${fs_size /mnt}
+${fs_bar /mnt}
+${endif}
+${stippled_hr 2 1}
+${color2}${alignr}Network
+${color1}eth:  ${color1}down:${color0} ${downspeed eth0} k/s ${color1}  up:${color0} ${upspeed eth0} k/s
+${color1}wlan: ${color1}down:${color0} ${downspeed wlan0} k/s ${color1}  up:${color0} ${upspeed wlan0} k/s
+${stippled_hr 2 1}
+${color2}${alignr}Battery
+${color1}AC Adapter: ${color0}$acpiacadapter
+${color1}Battery:    ${color0}$battery
+${stippled_hr 2 1}
+${color2}${alignr}Update
+${color1}${texeci 1800 python ~/crap/arch_update.py}
