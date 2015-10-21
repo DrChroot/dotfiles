@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "lets add your font! you should already have moved it to /usr/share/fonts/local"
+echo "lets add your font! you should already have moved it to ~/.fonts"
 sudo fc-cache -fs
 sudo mkfontscale ~/.fonts
 sudo mkfontdir ~/.fonts
