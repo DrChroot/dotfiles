@@ -1,0 +1,29 @@
+!*background: #000000
+!*foreground: #ffffff
+
+*font: -ark-boxxy-medium-r-normal--14-140-72-72-c-60-iso10646-1
+*boldFont: -ark-boxxy-medium-r-bold--14-140-72-72-c-60-iso10646-1
+!*font:			-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*
+!*boldFont:		-*-terminus-bold-*-*-*-12-*-*-*-*-*-*-*
+!xterm*faceName:		terminus:pixelsize=12
+
+*scrollBar:		false
+*internalBorder:	8
+*externalBorder:	6
+
+*allowBoldFonts:	false
+
+Xft*dpi:                96
+Xft*antialias:          true
+Xft*hinting:            none
+Xft.autohint:           0
+Xft.antialias:          1
+Xft.hinting:            true
+Xft.hintstyle:          hintfull
+Xft.dpi:                96
+Xft.rgba:               rgb
+Xft.lcdfilter:          lcddefault
+
+*background:       #000000
+*foreground:       #999999
+!#include </home/jaroslav/xcolors/xcolor_code/greens>
