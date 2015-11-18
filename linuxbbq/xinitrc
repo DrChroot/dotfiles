@@ -1,16 +1,13 @@
-#!/bin/bash
-
-xset s off &
-xset -dpms &
-xset +fp /usr/share/fonts/local
+#!/bin/sh
+xset +fp ~/.fonts
 xset fp rehash
-xsetroot -cursor_name left_ptr &
-#hsetroot -fill ~/pics/General/wallhaven-106821.jpg &
-hsetroot -solid "#b26262" &
-xrdb -merge ~/.Xresources &
-setxkbmap -option terminate:ctrl_alt_bksp &
-#compton -bcCG -i 1.0 -e 1.0 -m 1.0  --sw-opti &
-compton --config ~/.compton.conf &
-sxhkd &
+xrdb -merge ~/.Xresources
+#xsetroot -mod 3 3 -fg 'grey' -bg 'black' &
+hsetroot -fill ~/pics/wallhaven-3583.png -blur 90 &
+compton --config ~/.config/compton.conf &
+sleep 2s && emacs --font 'Roboto Mono Medium 10' &
 gm &
-exec swm #jwm
+sxhkd -c ~/.config/sxhkd/sxhkdrc &
+#exec ratpoison
+#exec blackbox
+exec swm
