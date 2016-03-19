@@ -1,8 +1,8 @@
-*font: -erus-erusfont-medium-r-normal--11-80-100-100-c-60-iso10646-1
-*boldFont: -erus-erusfont-medium-r-normal--11-80-100-100-c-60-iso10646-1
+*font: -ypn-envypn-medium-r-normal--13-130-75-75-c-90-iso8859-1
+*boldFont: -ypn-envypn-medium-r-normal--13-130-75-75-c-90-iso8859-1
 
 *scrollBar:		false
-*internalBorder:	8
+*internalBorder:	18
 *externalBorder:	6
 
 *allowBoldFonts:	false

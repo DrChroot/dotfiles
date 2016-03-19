@@ -2,12 +2,11 @@
 xset +fp ~/.fonts
 xset fp rehash
 xrdb -merge ~/.Xresources
-#xsetroot -mod 3 3 -fg 'grey' -bg 'black' &
-hsetroot -fill ~/pics/wallhaven-3583.png -blur 90 &
+hsetroot -fill ~/pics/yosemite.jpg -blur 90 &
 compton --config ~/.config/compton.conf &
-sleep 2s && emacs --font 'Roboto Mono Medium 10' &
+sxhkd &
 gm &
-sxhkd -c ~/.config/sxhkd/sxhkdrc &
 #exec ratpoison
-#exec blackbox
-exec swm
+#exec howm
+wew | focus_watcher.sh &
+exec urxvt -g 68X20+401+237
