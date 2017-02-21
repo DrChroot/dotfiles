@@ -1,0 +1,21 @@
+*font: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
+*boldFont: -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
+
+*scrollBar:		false
+*internalBorder:	18
+*externalBorder:	6
+
+*allowBoldFonts:	false
+
+Xft*dpi:                96
+Xft*antialias:          true
+Xft*hinting:            none
+Xft.autohint:           0
+Xft.antialias:          1
+Xft.hinting:            true
+Xft.hintstyle:          hintfull
+Xft.dpi:                96
+Xft.rgba:               rgb
+Xft.lcdfilter:          lcddefault
+
+#include </home/drchroot/.Xresources_colors>

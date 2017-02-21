@@ -1,0 +1,73 @@
+# exit to TTY
+super + Q
+      pkill xinit
+
+# open terminal
+super + Return
+      x-terminal-emulator -g 68X20+401+237
+
+# suckless tools' dmenu
+alt + p
+      dmenu_run -b -i -p 'LinuxBBQ Greatest Hits' -fn -ypn-envypn-medium-r-normal--13-130-75-75-c-90-iso8859-1 -nb "#212121" -nf "#e2e2e2" -sb "#634444" -sf "#eaadad"
+
+# kill active window
+super + x
+      killw $(pfw)
+
+# plug into botnet
+alt + shift + c
+ /usr/bin/vivaldi
+
+# Emacs-masterrace! (I'm assuming you are using the no-x package.)
+alt + shift + e
+ x-terminal-emulator -e emacs
+
+# move windows - normal
+super + Down
+      wmv 0 10 $(pfw)
+super + Up
+      wmv 0 -10 $(pfw)
+super + Right
+      wmv 10 0 $(pfw)
+super + Left
+      wmv -10 0 $(pfw)
+
+# move windows - fast
+super + shift + Down
+      wmv 0 40 $(pfw)
+super + shift + Up
+      wmv 0 -40 $(pfw)
+super + shift + Right
+      wmv 40 0 $(pfw)
+super + shift + Left
+      wmv -40 0 $(pfw)
+
+# resize windows
+super + l
+      wrs 10 0 $(pfw)
+super + h
+      wrs -10 0 $(pfw)
+super + j
+      wrs 0 -10 $(pfw)
+super + k
+      wrs 0 10 $(pfw)
+
+# resize windows - fast
+super + shift + l
+      wrs 40 0 $(pfw)
+super + shift + h
+      wrs -40 0 $(pfw)
+super + shift + j
+      wrs 0 -40 $(pfw)
+super + shift + k
+      wrs 0 40 $(pfw)
+
+# cycle thru windows
+alt + {Tab, shift + Tab}
+ focus.sh {next,prev} 2>/dev/null && \
+ wmp -a $(wattr xy $(pfw)) && \
+ wmp -r $(wattr wh $(pfw))
+
+# tile windows
+mod4 + {t,v}
+ tile.sh {-h,-v}
