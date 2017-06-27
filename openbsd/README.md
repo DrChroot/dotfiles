@@ -34,22 +34,26 @@ These are just a few installation shortcuts.
 ############################
 
 ```bash
-vi /etc/fstab```
+vi /etc/fstab
+```
 	Change all the "rw" to "rw,softdep,noatime"
 
 ```bash
-vi /etc/login.conf```
+vi /etc/login.conf
+```
 	If you've got 4G or more of RAM, change these two lines to:
 	:datasize-max=2048M:\
 	:datasize-cur=2048M:\
 
 ```bash
-vi /etc/doas.conf```
+vi /etc/doas.conf
+```
 	Add just these 3 words, (changing "YOURNAME" to regular username:)
 	permit nopass YOURNAME
 
 ```bash
-vi /etc/installurl```
+vi /etc/installurl
+```
 	Add just this line, or a closer mirror from http://www.openbsd.org/ftp.html
 	http://ftp3.usa.openbsd.org/pub/OpenBSD
 
@@ -67,7 +71,8 @@ reboot
 Look at packages in pkglist. This is what I use. If no objections, type:
 
 ```bash
-doas INSTALL.sh```
+doas INSTALL.sh
+```
 
 # Install ports for future use, but for now for the standard web fonts:
 ```bash
@@ -75,4 +80,5 @@ cd /tmp/
 ftp ftp://mirrors.syringanetworks.net/pub/OpenBSD/6.1/ports.tar.gz
 cd /usr ; doas tar xfz /tmp/ports.tar.gz
 cd /usr/ports/fonts/msttcorefonts
-doas make install clean```
+doas make install clean
+```
