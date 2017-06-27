@@ -1,7 +1,8 @@
 Remember to fetch your nonfree firmware drivers previous to the install... I hadn't thought to do that and gave myself a hard time.
 
 To prevent it happening again, I format a flash drive as FAT32 in GParted, mounted it, and run this on it:
-```wget -r http://firmware.openbsd.org/firmware/6.1/
+```bash
+wget -r http://firmware.openbsd.org/firmware/6.1/
 ```
 
 Then, after my simple OpenBSD install (I which I set it up to connect to my local network, even though it doesn't recognize my wifi card yet.), I'll mount the USB, `mount /dev/sd1i /mnt` and then `fw_update iwn-firmware-5.11p1.tgz` or whatever I need.
