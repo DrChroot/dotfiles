@@ -1,0 +1,20 @@
+music_directory        "~/audio"
+playlist_directory     "~/.mpd/playlists"
+db_file            "~/.mpd/tag_cache"
+log_file        "~/.mpd/mpd.log"
+pid_file        "~/.mpd/mpd.pid"
+state_file        "~/.mpd/mpdstate"
+input {
+        plugin "curl"
+}
+audio_output {
+	type		"oss"
+	name		"My OSS Device"
+}
+audio_output {
+    type                    "fifo"
+    name                    "my_fifo"
+    path                    "/tmp/mpd.fifo"
+    format                  "44100:16:2"
+}
+replaygain			"track"
